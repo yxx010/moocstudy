@@ -1,4 +1,4 @@
-package com.imooc;
+package com.imooc.flow1;
 
 /*基本类型	大小	取值范围	装箱基本类型
         char	2个字节	 	Character

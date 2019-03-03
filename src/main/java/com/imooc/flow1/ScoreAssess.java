@@ -1,4 +1,4 @@
-package com.imooc;
+package com.imooc.flow1;
 
 import java.util.Scanner;
 

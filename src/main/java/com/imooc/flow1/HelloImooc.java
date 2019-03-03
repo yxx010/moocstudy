@@ -1,4 +1,4 @@
-package com.imooc;
+package com.imooc.flow1;
 
 public class HelloImooc {
     public static void main(String[]args){
