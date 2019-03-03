@@ -13,4 +13,21 @@ package com.imooc.flow1;
 4、输出完一行的星号和空格后换行
 */
 public class StarDemo {
+    public static void main(String[] args) {
+        for(int n=4;n>=0;n--){
+            for (int i=0;i<n;i++)
+            {
+                System.out.print(" ");
+            }
+            for (int j=0;j<11-2*n;j++)
+            {
+                System.out.print("*");
+            }
+            for (int k=0;k<n;k++)
+            {
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
 }
