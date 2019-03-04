@@ -12,7 +12,7 @@ package com.imooc.flow1;
 3、第二个内重循环控制每行输出的星号数
 4、输出完一行的星号和空格后换行
 */
-public class StarDemo {
+public class StarDemo1 {
     public static void main(String[] args) {
         for(int n=4;n>=0;n--){
             for (int i=0;i<n;i++)
