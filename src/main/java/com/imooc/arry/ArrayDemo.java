@@ -1,4 +1,4 @@
-package com.imooc.flow2;
+package com.imooc.arry;
 
 public class ArrayDemo {
     public static void main(String[] args) {
