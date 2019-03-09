@@ -2,7 +2,7 @@ package com.imooc.method;
 
 public class DisCountDemo {
     //根据商品总价输出折后总价
-    public void sale(int amount)
+    public void disCount(int amount)
     {
         if(amount<100)
         {
@@ -24,7 +24,7 @@ public class DisCountDemo {
         //定义对象
         DisCountDemo dc=new DisCountDemo();
         //定义商品总价存放到变量中
-        dc.sale(150);
+        dc.disCount(150);
         //调用方法，输出折后商品总价
 
     }
