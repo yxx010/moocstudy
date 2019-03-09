@@ -2,7 +2,7 @@ package com.imooc.method;
 
 public class DisCountDemo {
     //根据商品总价输出折后总价
-    public void disCount(int amount)
+    public void disCount(double amount)
     {
         if(amount<100)
         {
