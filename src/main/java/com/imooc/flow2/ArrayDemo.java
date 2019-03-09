@@ -25,10 +25,6 @@ public class ArrayDemo {
         //循环输出值
         for (int i = 0; i < 5; i++) {
             System.out.println("intArry数组的值为："+intArry[i]);
-
         }
-
-
-
     }
 }
