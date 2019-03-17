@@ -8,8 +8,8 @@ public class Book {
     private float price;
     //通过构造方法实现属性赋值
     public Book(String name,String author,String press,float price){
-        this.setName(name);
-        this.setAuthor(author);
+        this.name=name;
+        this.author=author;
         this.setPress(press);
         this.setPrice(price);
     }
@@ -22,16 +22,9 @@ public class Book {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getPress() {
