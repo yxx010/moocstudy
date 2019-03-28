@@ -2,6 +2,7 @@ package com.imooc.extend;
 
 public class Bicycle extends NonMotor {
     // 在构造方法中调用父类多参构造，完成属性赋值
+    public Bicycle(){};
     public Bicycle(String brand,String color){
 
     }
