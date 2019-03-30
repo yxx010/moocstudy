@@ -1,6 +1,6 @@
 package com.imooc.extend;
 
-public class Test {
+public class WorkTest {
     public static void main(String[] args) {
         Work w=new Work();
         TestWork tw=new TestWork("测试工作",10,5);
