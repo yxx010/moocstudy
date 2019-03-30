@@ -1,7 +1,5 @@
 package com.imooc.object;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 public class FruitTest {
         public static void main(String[] args) {
             // 实例化2个父类对象，传入两组相同的参数值
