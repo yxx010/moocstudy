@@ -6,14 +6,16 @@ public class FootballDemo {
     public static void main(String[] args) {
         //定义HashMap的对象并添加数据
         Map<Integer,String> football=new HashMap<Integer, String>();
-/*        football.put(2014,"德国");
+        football.put(2014,"德国");
         football.put(2010,"西班牙");
         football.put(2006,"意大利");
         football.put(2002,"巴西");
         football.put(1998,"法国");
-        */
+
+
+        //添加数据，通过键盘输入方式
+        /*
         Scanner sc=new Scanner(System.in);
-        //添加数据
         int i=0;
         while (i<3){
             System.out.println("请输入年份：");
@@ -22,7 +24,7 @@ public class FootballDemo {
             String value=sc.next();
             football.put(key,value);
             i++;
-        }
+        }*/
         //使用迭代器的方式遍历
         Iterator<String> it=football.values().iterator();
         System.out.println("使用迭代器的方式遍历：");
