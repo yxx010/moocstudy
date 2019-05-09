@@ -4,7 +4,7 @@ public class Letter implements Runnable {
     char [] letter=new char[26];
     public Letter(){
         for (int i = 0; i < 26; i++) {
-            letter[i]=(char)(97+i);
+            letter[i]=(char)((int)('a')+i);
         }
     }
     @Override
