@@ -1,4 +1,4 @@
-package com.imooc.Single;
+package com.imooc.single;
 
 public class EarthTest {
     public static void main(String[] args) {
