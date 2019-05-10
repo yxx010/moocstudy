@@ -1,4 +1,4 @@
-package com.imooc.Single;
+package com.imooc.single;
 
 public class Emperor {
     //定义私有构造方法

@@ -1,4 +1,4 @@
-package com.imooc.Single;
+package com.imooc.single;
 //饿汉式单例模式
 public class Earth {
     //定义私有构造方法，并在构造方法中打印输出“地球诞生”
