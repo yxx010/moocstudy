@@ -1,9 +1,9 @@
-package com.imooc.File;
+package com.imooc.file;
 
 import java.io.File;
 import java.io.IOException;
 
-public class FileTest {
+public class FileDemo {
     public static void main(String[] args) {
         File file=new File("/Users/yangxiaoxiao/Desktop","Monday.docx");
         if(!file.exists()){
