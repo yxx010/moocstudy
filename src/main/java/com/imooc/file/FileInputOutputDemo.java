@@ -3,7 +3,7 @@ package com.imooc.file;
 
 import java.io.*;
 
-public class FileInputDemo {
+public class FileInputOutputDemo {
     public static void main(String[] args) {
         try {
             File file=new File("1.txt");
