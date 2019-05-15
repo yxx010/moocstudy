@@ -2,7 +2,7 @@ package com.imooc.file;
 
 import java.io.*;
 
-public class FileBuffer {
+public class FileAndBuffer {
     public static void main(String[] args) {
         try {
             FileOutputStream fos=new FileOutputStream("one.txt");
