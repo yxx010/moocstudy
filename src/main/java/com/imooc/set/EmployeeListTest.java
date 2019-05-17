@@ -2,7 +2,7 @@ package com.imooc.set;
 
 import java.util.ArrayList;
 
-public class EmployeeTest {
+public class EmployeeListTest {
     public static void main(String[] args) {
         Employee e1=new Employee(1,"张三",5000);
         Employee e2=new Employee(1,"李四",5500);

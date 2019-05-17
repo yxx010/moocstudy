@@ -3,7 +3,7 @@ package com.imooc.set;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-public class StudentTest {
+public class StudentSetTest {
     public static void main(String[] args) {
         //定义三个Student类的对象及一个HashSet类的对象
         Student st1=new Student(1,"William",65);

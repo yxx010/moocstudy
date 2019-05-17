@@ -2,7 +2,7 @@ package com.imooc.set;
 
 import java.util.*;
 
-public class FootballDemo {
+public class FootballMapDemo {
     public static void main(String[] args) {
         //定义HashMap的对象并添加数据
         Map<Integer,String> football=new HashMap<Integer, String>();
