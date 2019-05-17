@@ -1,4 +1,4 @@
-package com.imooc.extend;
+package com.imooc.extend1;
 
 public class Work {
     // 属性：工作ming

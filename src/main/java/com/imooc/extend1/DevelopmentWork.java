@@ -1,4 +1,4 @@
-package com.imooc.extend;
+package com.imooc.extend1;
 
 public class DevelopmentWork extends Work {
     // 属性：有效编码行数、目前没有解决的Bug个数

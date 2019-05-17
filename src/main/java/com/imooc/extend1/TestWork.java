@@ -1,4 +1,5 @@
-package com.imooc.extend;
+package com.imooc.extend1;
+
 
 public class TestWork extends Work {
     //属性：编写的测试用例个数、发现的Bug数量
