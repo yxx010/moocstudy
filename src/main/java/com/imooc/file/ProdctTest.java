@@ -33,14 +33,14 @@ import java.util.Objects;
  * 序列化：把Java对象转换成字节序列的过程
  * 反序列化：把字节序列恢复为Java对象的过程
  */
-class Product implements Serializable{
+class ProductSerializable implements Serializable{
 
     private String ID;
     private String name;
     private String categories;
     private double price;
 
-    public Product(String ID, String name, String categories, double price) {
+    public ProductSerializable(String ID, String name, String categories, double price) {
         this.ID = ID;
         this.name = name;
         this.categories = categories;
@@ -83,7 +83,7 @@ class Product implements Serializable{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
+        ProductSerializable product = (ProductSerializable) o;
         return Objects.equals(ID, product.ID);
     }
 
@@ -100,12 +100,12 @@ class Product implements Serializable{
                 "\n产品价格：" + price+"元";
     }
 }
-public class ProdectTest {
+public class ProdctTest {
     public static void main(String[] args) {
-        Product iphone=new Product("123","iphone","telephone",4888);
-        Product ipad=new Product("234","ipad","computer",5088);
-        Product macbook=new Product("345","macbook","computer",10688);
-        Product iwatch=new Product("256","iwatch","watch",4799);
+        ProductSerializable iphone=new ProductSerializable("123","iphone","telephone",4888);
+        ProductSerializable ipad=new ProductSerializable("234","ipad","computer",5088);
+        ProductSerializable macbook=new ProductSerializable("345","macbook","computer",10688);
+        ProductSerializable iwatch=new ProductSerializable("256","iwatch","watch",4799);
         try {
             FileOutputStream fos=new FileOutputStream("product.txt");
             ObjectOutputStream oos=new ObjectOutputStream(fos);
@@ -118,9 +118,9 @@ public class ProdectTest {
             fos.close();
             FileInputStream fis=new FileInputStream("product.txt");
             ObjectInputStream ois=new ObjectInputStream(fis);
-            Product products;
+            ProductSerializable products;
             System.out.println("Apple系列产品信息：");
-            while ((products=(Product) ois.readObject())!=null){
+            while ((products=(ProductSerializable) ois.readObject())!=null){
                 System.out.println(products);
                 System.out.println();
             }
