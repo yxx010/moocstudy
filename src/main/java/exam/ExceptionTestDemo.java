@@ -1,4 +1,4 @@
-package com.imooc.exam;
+package exam;
 
 public class ExceptionTestDemo {
     public static void method(){

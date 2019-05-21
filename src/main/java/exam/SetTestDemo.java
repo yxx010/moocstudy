@@ -1,4 +1,4 @@
-package com.imooc.exam;
+package exam;
 
 import java.util.HashSet;
 import java.util.Iterator;
