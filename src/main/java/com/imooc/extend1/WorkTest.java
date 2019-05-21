@@ -1,4 +1,4 @@
-package com.imooc.extend;
+package com.imooc.extend1;
 
 public class WorkTest {
     public static void main(String[] args) {
