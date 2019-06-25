@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.div1{
+    top:100px;
+    left: 60px;
+    position: absolute;
+
+}
+div{
+    width: 170px;
+}
+input[type="button"]{
+    width: 30px;
+    margin-right: 5px;
+}
+input[type="text"]{
+    width: 148px;
+    text-align: right;
+    background-color: #fff;
+    border: 1px solid;
+}
