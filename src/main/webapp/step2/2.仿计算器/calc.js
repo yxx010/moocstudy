@@ -61,22 +61,7 @@ function init() {
                     case "m":
                         break;
                     case "=":
-                        switch (fh) {
-                            case "+":
-                                num.value=tempNum+num.value*1;
-                                break;
-                            case "-":
-                                num.value=tempNum-num.value*1;
-                                break;
-                            case "*":
-                                num.value=tempNum*num.value*1;
-                                break;
-                            case "/":
-                                if(num.value==0)
-                                alert("除数不能为0！")
-                                num.value=tempNum/num.value;
-                                break;
-                        }
+                        num.value=calc(tempNum,num.value*1,fh);
                         break;
                 }
             }
@@ -118,4 +103,25 @@ function sign(n) {
         n=n.substr(1,n.length);
     }
     return n;
+}
+
+function calc(m,n,fh) {
+    switch (fh) {
+        case "+":
+            n=m+n;
+            break;
+        case "-":
+            n=m-n;
+            break;
+        case "*":
+            n=m*n;
+            break;
+        case "/":
+            if(n==0)
+                alert("除数不能为0！")
+            n=m/n;
+            break;
+    }
+    return n;
+
 }
