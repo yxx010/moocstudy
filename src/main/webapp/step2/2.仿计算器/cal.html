@@ -5,8 +5,10 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="cal.css">
     <script type="text/javascript" src="cal.js"></script>
+    <script type="text/javascript" src="js/mooc.js"></script>
+
 </head>
-<body onload="init()">
+<body onload="init(),init_mooc()">
 <div class="div1">
     <div class="div2">
         <input type="text"  name="num" id="num">
@@ -35,7 +37,7 @@
         <input type="button" value="0" name="">
         <input type="button" value="." name="">
         <input type="button" value="=" name="">
-        <input type="button" value="m" name="">
+        <input type="button" value="m" name="m" id="m_id">
     </div>
 </div>
 </body>
