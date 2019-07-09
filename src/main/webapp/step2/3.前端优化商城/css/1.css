@@ -1,0 +1,42 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    margin: 25px auto 0 50px;
+}
+.header .menu ul{
+    /*ul默认不展示*/
+    display: none;
+}
+
+.header .logo{
+    /*浮动*/
+    float: left;
+    position: relative;
+}
+.header .menu{
+     /*内容分类浮动，相对定位*/
+     float: left;
+     position: relative;
+     margin-top:12px;
+     margin-left: 12px;
+ }
+
+.header .login{
+    /*内容分类浮动，相对定位*/
+    float: left;
+    position: relative;
+    margin-top:12px;
+    margin-left: 500px;
+}
+
+.header .register{
+    /*内容分类浮动，相对定位*/
+    float: left;
+    position: relative;
+    margin-top:12px;
+    margin-right: 20px;
+
+    margin-right: 40px;
+}
