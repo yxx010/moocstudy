@@ -8,11 +8,14 @@
 .header .menu ul{
     /*ul默认不展示*/
     display: none;
+    /*去掉列表左侧项目编号*/
+    list-style: none;
 }
 
 .header .logo{
     /*浮动*/
     float: left;
+    /*相对定位方式，和浮动一起使用*/
     position: relative;
 }
 .header .menu{
@@ -23,20 +26,29 @@
      margin-left: 12px;
  }
 
-.header .login{
-    /*内容分类浮动，相对定位*/
-    float: left;
-    position: relative;
-    margin-top:12px;
-    margin-left: 500px;
+
+.header .menu ul li{
+   margin-top: 15px;
+    text-align: center;
 }
 
-.header .register{
-    /*内容分类浮动，相对定位*/
-    float: left;
-    position: relative;
-    margin-top:12px;
-    margin-right: 20px;
+.header .menu .menu_title{
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    width: 80px;
+    text-align: center;
 
-    margin-right: 40px;
+}
+a{
+    text-decoration: none;
+}
+.header .auth{
+    float: right;
+}
+
+.header .auth ul li{
+    float: left;
+    margin-right: 20px;
+    margin-top: 12px;
+    list-style: none;
 }
