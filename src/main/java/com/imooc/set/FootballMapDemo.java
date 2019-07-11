@@ -39,6 +39,13 @@ public class FootballMapDemo {
             System.out.print(itKey.next()+" ");
         }
         System.out.println();
+        //使用迭代器方式遍历k、v
+        System.out.println("使用迭代器获取k-v");
+        Iterator<Map.Entry<Integer,String>> itKV=football.entrySet().iterator();
+        while (itKV.hasNext()){
+            System.out.println(itKV.next());
+        }
+        System.out.println();
         //使用keySet获取key，再获取value
         System.out.println("使用keySet获取key，再获取value");
         Set<Integer> keySet=football.keySet();
