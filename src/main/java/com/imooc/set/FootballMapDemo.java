@@ -25,13 +25,27 @@ public class FootballMapDemo {
             football.put(key,value);
             i++;
         }*/
-        //使用迭代器的方式遍历
+        //使用迭代器的方式遍历value
         Iterator<String> it=football.values().iterator();
-        System.out.println("使用迭代器的方式遍历：");
+        System.out.println("使用迭代器的方式遍历value：");
         while(it.hasNext()){
                 System.out.print(it.next()+" ");
         }
         System.out.println();
+        //使用迭代器方式遍历key
+        Iterator<Integer> itKey=football.keySet().iterator();
+        System.out.println("使用迭代器的方式遍历key：");
+        while(itKey.hasNext()){
+            System.out.print(itKey.next()+" ");
+        }
+        System.out.println();
+        //使用keySet获取key，再获取value
+        System.out.println("使用keySet获取key，再获取value");
+        Set<Integer> keySet=football.keySet();
+        for(Integer key:keySet){
+            System.out.println(key+"："+football.get(key));
+
+        }
         System.out.println("使用EntrySet同时获取key和value：");
         //使用EntrySet同时获取key和value
         Set<Map.Entry<Integer,String>> entrySet=football.entrySet();
