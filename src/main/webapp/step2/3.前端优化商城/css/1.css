@@ -3,14 +3,15 @@
     padding: 0px;
 }
 .header{
-    margin: 25px auto 0 50px;
+    /*上右下左
+        margin: 25px auto 0 50px;
+    */
+    /*上下25，左右自动*/
+    margin: 25px auto;
+
+    width: 1200px;
 }
-.header .menu ul{
-    /*ul默认不展示*/
-    display: none;
-    /*去掉列表左侧项目编号*/
-    list-style: none;
-}
+
 
 .header .logo{
     /*浮动*/
@@ -26,10 +27,20 @@
      margin-left: 12px;
  }
 
-
+.header .menu ul{
+    /*ul默认不展示*/
+    display: none;
+    /*去掉列表左侧项目编号*/
+    list-style: none;
+    position: absolute;
+    width: 80px;
+    opacity: 0.5;
+    background-color: white;
+}
 .header .menu ul li{
    margin-top: 15px;
     text-align: center;
+    width: 80px;
 }
 
 .header .menu .menu_title{
@@ -51,4 +62,12 @@ a{
     margin-right: 20px;
     margin-top: 12px;
     list-style: none;
+}
+.content{
+    width: 1200px;
+    margin: 25px auto;
+}
+
+.content .banner .banner-img{
+    margin-top: 15px;
 }
