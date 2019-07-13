@@ -71,3 +71,57 @@ a{
 .content .banner .banner-img{
     margin-top: 15px;
 }
+.content .img-content{
+    width: 1280px;
+}
+.content .img-content ul li{
+    width: 360px;
+    float: left;
+    margin: 30px 60px 30px 0;
+    list-style: none;
+    height: 500px;
+    background-color: white;
+    box-shadow:0 0 3px 3px #ccc;
+}
+body{
+    background-color:#F5F5F5;
+}
+.img-content>ul>li .info h3{
+    font-size: 25px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.img-content>ul>li .info p{
+   line-height: 25px;
+    margin-bottom: 20px;
+}
+.info{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.img-content>ul>li .price{
+    color: red;
+    font-size: 20px;
+    float: left;
+}
+.content .img-content .info .img-btn{
+    width: 300px;
+}
+.img-content .info .img-btn .btn{
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+    float:right;
+}
+
+.img-content .info .img-btn .cart img{
+    width: 25px;
+    height: 20px;
+    margin-top: 5px;
+}/*
+.img-btn .price{
+    float: left;
+}*/
