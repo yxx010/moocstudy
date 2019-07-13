@@ -125,3 +125,44 @@ body{
 .img-btn .price{
     float: left;
 }*/
+.page-nav ul li{
+    margin-right: 10px;
+    list-style: none;
+    float: left;
+}
+.page-nav{
+     width: 100%;
+     height: 60px;
+     line-height: 60px;
+
+    /*border:1px solid black;*/
+     overflow: hidden;
+    text-align: center;
+}
+.page-nav ul{
+    margin: auto;
+    overflow: hidden;
+    width: 500px;
+}
+.first-page{
+    /*阴影*/
+    border-radius: 50%;
+    background-color: #c5c5c5;
+    /*阴影大小*/
+    padding: 3px 9px;
+}
+
+.footer{
+    width: 1200px;
+    height: 100px;
+    margin: 60px auto;
+    border-top: 1px solid #ccc;
+    overflow: hidden;
+}
+.footer p{
+    text-align: center;
+    line-height: 80px;
+}
+.footer p span{
+    color: red;
+}
