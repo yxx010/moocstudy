@@ -1,6 +1,11 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: Microsoft YaHei UI;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 .header{
     width: 100%;
@@ -27,35 +32,182 @@
     margin-right: 10px;
     line-height: 80px;
     height: 80px;
-    color: white;
-}
-/*.content .banner banner-img{
-    width: 1700px;
-    height: 800px;
-    float: left;
-}*/
 
+}
+
+.content{
+    width: 100%;
+}
 .content .banner
 {
     background-image:url("../images/banner3.jpg");
-    width: 1700px;
+    width: 100%;
     height: 800px;
 }
 .content .banner ul{
     float: left;
-    position: relative;
-    margin: 20px 100px;
     list-style: none;
+    margin:100px 35%;
+    text-align: center;
 }
 
 .content .banner ul li{
-    margin:20px;
+    margin: 20px;
+}
+.content .banner ul li input{
+     height: 40px;
+     font-size: 20px;
+     width: 400px;
+     padding-left: 10px;
+     border-color: white;
+     background-color:black;
+     color: white;
+     opacity: 0.4;
+}
+
+.content .banner ul li .comment{
+    height: 120px;
     line-height: 40px;
 }
-.content .banner ul input{
-    height: 50px;
-    font-size: 20px;
+.content .banner ul li .send-btn{
+    width: 200px;
 }
-.bb3-img{
 
+.content .about .about-info{
+    text-align: center;
+    margin: 30px 20%;
+}
+.content .about .about-info>div{
+    border: 1px solid #07cbc9;
+    width: 6%;
+    margin:20px 47%;
+}
+.content .about .about-us{
+    margin: 40px 20px;
+    width: 25%;
+    float: left;
+}
+.content .about .about-us-2{
+    padding: 30px 30px;
+    border: 1px solid;
+    height: 190px;
+}
+.content .about .about-us h2{
+    text-align: center;
+}
+.content .about .about-us .about-us-2 input{
+    background-color: black;
+    color: white;
+    width: 96px;
+    height: 45px;
+    vertical-align:middle;
+    border: none;
+    margin-top: 20px;
+}
+.content .about .bb3-img{
+    float: left;
+    width: 650px;
+    height:435px;
+    margin: 40px;
+}
+.content .about .about-count{
+    margin-top: 40px;
+    margin-left: 20px;
+    float: left;
+    text-align: center;
+    width: 10%;
+}
+.content .about .about-count>div{
+    border: 2px solid #07cbc9;
+    height: 120px;
+    padding:30px 20px;
+    margin-bottom: 20px;
+}
+.content .about .about-count>div>div{
+    border: 1px solid #07cbc9;
+    margin-left: 5%;
+}
+.content .about .b1-b4-img ul li{
+    width: 25%;
+    float: left;
+    height: 396px;
+    list-style: none;
+    background-color: #07cbc9;
+    overflow: hidden;
+    color: #ffffff;
+}
+.content .about .b1-b4-img ul li h2{
+    padding: 10px 20px;
+}
+.content .about .b1-b4-img ul li h4{
+    padding: 10px 20px;
+}
+.content .about .b1-b4-img ul li p{
+    padding: 10px 20px;
+}
+.content .about .b1-b4-img ul li input{
+    margin: 50px 100px;
+    background-color: black;
+    color: white;
+    width: 96px;
+    height: 45px;
+    vertical-align:middle;
+    border: none;
+}
+
+
+.content .gallery{
+    margin-top: 800px;
+    margin-left: 6%;
+    margin-left: 6%;
+
+}
+.content .gallery .gallery-info{
+    text-align: center;
+    margin: 20px 25%;
+}
+.content .gallery .gallery-info>div{
+    border: 1px solid #07cbc9;
+    width: 6%;
+    margin:20px 47%;
+}
+.content .gallery .gallery-img ul li{
+    padding: 0px;
+    background-color: black;
+    float: left;
+    height: 300px;
+    list-style: none;
+    margin: 10px;
+}
+.content .gallery .gallery-img>ul>li h5{
+    color: white;
+    padding-left: 15px;
+    line-height: 60px;
+}
+.footer{
+    margin-top: 700px;
+    width: 100%;
+    height: 80px;
+    background-color: #07cbc9;
+    color: white;
+    text-align: center;
+    line-height: 80px;
+}
+a:hover{
+    background-color: black;
+    border: 1px silver;
+}
+
+input[type="text"]:hover{
+    border-color: #07cbc9;
+}
+input[type="button"]:hover{
+    background-color:#07cbc9;
+    border: none;
+}
+.content .about .about-us  input[type="button"]:hover{
+    opacity: 0.4;
+}
+.content .about .b1-b4-img input[type="button"]:hover{
+    opacity: 0.4;
 }
