@@ -9,9 +9,11 @@ a{
 }
 .header{
     width: 100%;
-    margin: 20px auto;
     height: 80px;
     background-color:#07cbc9;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
 }
 .header .logo{
     float: left;
@@ -32,7 +34,7 @@ a{
     margin-right: 10px;
     line-height: 80px;
     height: 80px;
-
+    padding: 0px 5px;
 }
 
 .content{
@@ -59,7 +61,7 @@ a{
      font-size: 20px;
      width: 400px;
      padding-left: 10px;
-     border-color: white;
+     border: 2px solid whitesmoke;
      background-color:black;
      color: white;
      opacity: 0.4;
@@ -75,7 +77,9 @@ a{
 
 .content .about .about-info{
     text-align: center;
-    margin: 30px 20%;
+    margin: 20px 20%;
+    top: 30px;
+    position: relative;
 }
 .content .about .about-info>div{
     border: 1px solid #07cbc9;
@@ -86,11 +90,14 @@ a{
     margin: 40px 20px;
     width: 25%;
     float: left;
+    position:relative;
+    left:100px;
 }
-.content .about .about-us-2{
+.content .about .about-us .about-us-2{
     padding: 30px 30px;
     border: 1px solid;
     height: 190px;
+    background-color: rgba(255,255,255,0.4);
 }
 .content .about .about-us h2{
     text-align: center;
@@ -108,7 +115,7 @@ a{
     float: left;
     width: 650px;
     height:435px;
-    margin: 40px;
+    margin: 40px auto;
 }
 .content .about .about-count{
     margin-top: 40px;
@@ -116,12 +123,22 @@ a{
     float: left;
     text-align: center;
     width: 10%;
+    height: 120px;
 }
+
 .content .about .about-count>div{
     border: 2px solid #07cbc9;
-    height: 120px;
+    height: 100px;
     padding:30px 20px;
     margin-bottom: 20px;
+}
+.content .about .about-count h2{
+    height: 50px;
+    line-height: 50px;
+}
+.content .about .about-count h3{
+    height: 50px;
+    line-height: 50px;
 }
 .content .about .about-count>div>div{
     border: 1px solid #07cbc9;
@@ -160,6 +177,8 @@ a{
     margin-top: 800px;
     margin-left: 6%;
     margin-left: 6%;
+    position: relative;
+    top: 20px;
 
 }
 .content .gallery .gallery-info{
@@ -193,15 +212,14 @@ a{
     text-align: center;
     line-height: 80px;
 }
-a:hover{
+.header .menu ul li:hover{
     background-color: black;
-    border: 1px silver;
 }
 
-input[type="text"]:hover{
-    border-color: #07cbc9;
+.content .banner ul li input[type="text"]:hover{
+    border:2px solid #07cbc9;
 }
-input[type="button"]:hover{
+.content .banner ul li input[type="button"]:hover{
     background-color:#07cbc9;
     border: none;
 }
