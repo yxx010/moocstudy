@@ -74,7 +74,9 @@ a{
 .content .banner ul li .send-btn{
     width: 200px;
 }
-
+.content .about {
+    margin-bottom: 20px;
+}
 .content .about .about-info{
     text-align: center;
     margin: 20px 20%;
@@ -176,9 +178,7 @@ a{
 .content .gallery{
     margin-top: 800px;
     margin-left: 6%;
-    margin-left: 6%;
-    position: relative;
-    top: 20px;
+
 
 }
 .content .gallery .gallery-info{
