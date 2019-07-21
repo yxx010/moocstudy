@@ -8,7 +8,9 @@ var index=0,timer=null,
     dots=byId("dots").getElementsByTagName("span"),
     prev=byId("prev"),
     next=byId("next"),
-    len=pics.length;
+    len=pics.length,
+    menu=byId("menu-content"),
+    menuItems=menu.getElementsByTagName("menu-item");
 function slideImg() {
     var main=byId("main");
     main.onmouseover=function(){
@@ -48,6 +50,16 @@ function slideImg() {
         if(index<0) index=len-1;
         changeImg();
     }
+//导航菜单，绑定事件
+    for (var m=0;m<menuItems.length;m++){
+        menuItems[m].setAttribute("data-index",m);
+        menuItems[m].onmouseover=function(){
+           //每一个menu-item定义data-index
+            var idx=this.getAttribute("data-index");
+            alert(idx);
+        }
+    }
+
 }
 function changeImg(){
     //遍历所有div，将其属性变成隐藏
