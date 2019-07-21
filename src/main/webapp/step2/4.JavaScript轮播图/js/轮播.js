@@ -10,7 +10,7 @@ var index=0,timer=null,
     next=byId("next"),
     len=pics.length,
     menu=byId("menu-content"),
-    menuItems=menu.getElementsByTagName("menu-item");
+    menuItems=menu.getElementsByTagName("div");
 function slideImg() {
     var main=byId("main");
     main.onmouseover=function(){
