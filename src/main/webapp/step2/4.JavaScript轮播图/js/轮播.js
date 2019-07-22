@@ -10,6 +10,8 @@ var index=0,timer=null,
     next=byId("next"),
     len=pics.length,
     menu=byId("menu-content"),
+    subMenu=byId("sub-menu"),
+    innerBox=subMenu.getElementsByClassName("inner-box"),
     menuItems=menu.getElementsByClassName("menu-item");
 function slideImg() {
     var main=byId("main");
@@ -56,7 +58,25 @@ function slideImg() {
         menuItems[m].onmouseover=function(){
            //每一个menu-item定义data-index
             var idx=this.getAttribute("data-index");
-            alert(idx);
+            //去掉sub-menu上的hide属性
+            subMenu.className="sub-menu";
+            //循环，在鼠标移动到上面时让所有的变成none，然后只展示选中的
+            for(var j=0;j<innerBox.length;j++){
+              innerBox[j].style.display='none';
+              menuItems[j].style.background="none";
+            }
+            menuItems[idx].style.background='rgba(0,0,0,0.1)';
+            innerBox[idx].style.display='block';
+        }
+        menu.onmouseout=function () {
+            subMenu.className="sub-menu hide";
+
+        }
+        subMenu.onmouseover=function(){
+            this.className="sub-menu";
+        }
+        subMenu.onmouseout=function(){
+            this.className="sub-menu hide";
         }
     }
 

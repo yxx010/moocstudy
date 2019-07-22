@@ -115,7 +115,6 @@ body{
     left: 0px;
     top: 0px;
     z-index: 2;
-    background: red;
     opacity:0.5 ;
 }
 .menu-item{
@@ -131,7 +130,7 @@ body{
 .menu-item a{
     display: block;
     border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding: 8px;
+    padding: 0 8px;
     height: 63px;
 }
 .menu-item i{
@@ -186,6 +185,6 @@ body{
 .sub-row{
     margin-bottom: 25px;
 }
-.sub-menu{
+.hide{
     display: none;
 }
