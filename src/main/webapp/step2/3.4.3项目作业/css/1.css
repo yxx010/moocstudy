@@ -7,16 +7,17 @@ a{
     text-decoration: none;
     color: white;
 }
-.clear{
-    clear: both;
-}
-.clear::after{
+.clear:after,.clear:before{
     content: "";
-    visibility: hidden;
-    height: 0px;
-    display: block;
+    display: table;
+}
+.clear:after{
     clear: both;
 }
+.clear{
+    *zoom: 1;
+}
+
 .header{
     width: 100%;
     height: 80px;
