@@ -7,6 +7,16 @@ a{
     text-decoration: none;
     color: white;
 }
+.clear{
+    clear: both;
+}
+.clear::after{
+    content: "";
+    visibility: hidden;
+    height: 0px;
+    display: block;
+    clear: both;
+}
 .header{
     width: 100%;
     height: 80px;
@@ -176,7 +186,7 @@ a{
 
 
 .content .gallery{
-    margin-top: 800px;
+    margin-top: 20px;
     margin-left: 6%;
 
 
@@ -204,7 +214,7 @@ a{
     line-height: 60px;
 }
 .footer{
-    margin-top: 700px;
+    margin-top: 20px;
     width: 100%;
     height: 80px;
     background-color: #07cbc9;
