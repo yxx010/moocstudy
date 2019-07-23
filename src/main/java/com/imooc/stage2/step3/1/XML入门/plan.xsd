@@ -3,12 +3,19 @@
     <element name="plan">
         <complexType>
             <sequence>
-                <element name="item" minOccurs="0" maxOccurs="9999">
+                <element name="item" minOccurs="1" maxOccurs="9999">
                     <complexType>
                         <sequence>
                             <element name="course-name" type="string"></element>
-                            <element name="class-hour" type="integer"></element>
-                            <element name="class-form" type="integer"></element>
+                            <element name="class-hour" type="integer">
+                                <simpleType>
+                                    <restriction base="integer">
+                                        <minInclusive value="20"></minInclusive>
+                                        <maxInclusive value="110"></maxInclusive>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="exam-form" type="string"></element>
                         </sequence>
                         <!--no在plan下必须出现 -->
                         <attribute name="no" type="string" use="required"></attribute>
