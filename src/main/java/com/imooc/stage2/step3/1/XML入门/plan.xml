@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plan SYSTEM "plan.dtd">
+<plan>
+    <item no="1">
+        <sourse-name>大学英语</sourse-name>
+        <class-hour>36</class-hour>
+        <exam-form>考试</exam-form>
+    </item>
+    <item no="2">
+        <sourse-name>高等数学</sourse-name>
+        <class-hour>70</class-hour>
+        <exam-form>考试</exam-form>
+    </item>
+    <item no="3">
+        <sourse-name>计算机应用基础</sourse-name>
+        <class-hour>108</class-hour>
+        <exam-form>上机考试</exam-form>
+    </item>
+</plan>
