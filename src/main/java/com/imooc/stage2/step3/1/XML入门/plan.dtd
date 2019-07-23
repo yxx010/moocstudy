@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!ELEMENT plan (item*)>
-<!ELEMENT item (cource-name,class-hour,exam-form)>
+<!ELEMENT item (course-name,class-hour,exam-form)>
 <!ATTLIST item no CDATA "">
-<!ELEMENT cource-name (#PCDATA)>
+<!ELEMENT course-name (#PCDATA)>
 <!ELEMENT class-hour (#PCDATA)>
 <!ELEMENT exam-form (#PCDATA)>
