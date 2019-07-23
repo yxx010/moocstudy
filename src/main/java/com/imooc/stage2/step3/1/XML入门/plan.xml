@@ -7,7 +7,7 @@
         <exam-form>考试</exam-form>
     </item>
     <item no="2">
-        <sourse-cource>高等数学</sourse-cource>
+        <cource-cource>高等数学</cource-cource>
         <class-hour>70</class-hour>
         <exam-form>考试</exam-form>
     </item>
