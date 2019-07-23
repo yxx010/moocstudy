@@ -2,6 +2,6 @@
 <!ELEMENT plan (item*)>
 <!ELEMENT item (cource-name,class-hour,exam-form)>
 <!ATTLIST item no CDATA "">
-<!ELEMENT sourse-name (#PCDATA)>
+<!ELEMENT cource-name (#PCDATA)>
 <!ELEMENT class-hour (#PCDATA)>
 <!ELEMENT exam-form (#PCDATA)>
