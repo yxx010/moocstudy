@@ -7,7 +7,7 @@
                     <complexType>
                         <sequence>
                             <element name="course-name" type="string"></element>
-                            <element name="class-hour" type="integer">
+                            <element name="class-hour">
                                 <simpleType>
                                     <restriction base="integer">
                                         <minInclusive value="20"></minInclusive>
