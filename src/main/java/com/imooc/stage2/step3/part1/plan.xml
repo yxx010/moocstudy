@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE plan SYSTEM "plan.dtd">
+<!DOCTYPE plan SYSTEM
+        "/Users/yangxiaoxiao/Documents/projects_test/moocstudy/src/main/java/com/imooc/stage2/step3/part1/plan.dtd">
 <plan>
     <item no="1">
         <course-name>大学英语</course-name>
