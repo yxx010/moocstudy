@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PlanReader {
     public void readXml(){
-        String file="./plan.xml";
+        String file="plan.xml";
         //读取XML文件的核心类
         SAXReader reader=new SAXReader();
         try {
