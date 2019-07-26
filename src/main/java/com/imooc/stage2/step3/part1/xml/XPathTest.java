@@ -35,6 +35,11 @@ public class XPathTest {
         //test.xpath("//item");
         test.xpath("//item[class-hour>100]");
         test.xpath("//item[course-name='大学英语']");
+        test.xpath("//item[@no='2']");
+        test.xpath("//item[last]");
+        test.xpath("//item[position<2]");
+
+
 
 
     }
