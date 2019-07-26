@@ -36,5 +36,7 @@ public class PlanWriter {
     public static void main(String[] args) {
         PlanWriter planWriter=new PlanWriter();
         planWriter.writeXml();
+        PlanReader planReader=new PlanReader();
+        planReader.readXml();
     }
 }
