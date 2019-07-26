@@ -33,11 +33,13 @@ public class XPathTest {
         XPathTest test=new XPathTest();
         //test.xpath("/plan/item");
         //test.xpath("//item");
-        test.xpath("//item[class-hour>100]");
-        test.xpath("//item[course-name='大学英语']");
-        test.xpath("//item[@no='2']");
-        test.xpath("//item[last]");
-        test.xpath("//item[position<2]");
+        //test.xpath("//item[class-hour>100]");
+       // test.xpath("//item[course-name='大学英语']");
+        //test.xpath("//item[@no='2']");
+       // test.xpath("//item[last]");
+       // test.xpath("//item[position<2]");
+
+        test.xpath("//item[1] |//item[3]");
 
 
 
