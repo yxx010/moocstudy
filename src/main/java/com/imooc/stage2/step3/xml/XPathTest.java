@@ -1,4 +1,4 @@
-package com.imooc.stage2.step3.part1.xml;
+package com.imooc.stage2.step3.xml;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
