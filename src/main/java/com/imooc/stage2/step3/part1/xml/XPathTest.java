@@ -21,7 +21,7 @@ public class XPathTest {
                 System.out.println(element.elementText("course-name"));
                 System.out.println(element.elementText("class-hour"));
                 System.out.println(element.elementText("exam-form"));
-                System.out.println("===================");
+                System.out.println("-----------------");
 
             }
         } catch (DocumentException e) {
@@ -31,15 +31,29 @@ public class XPathTest {
 
     public static void main(String[] args) {
         XPathTest test=new XPathTest();
-        //test.xpath("/plan/item");
+        System.out.println("所有课程信息如下：");
+        System.out.println("******************");
+        test.xpath("/plan/item");
         //test.xpath("//item");
-        //test.xpath("//item[class-hour>100]");
-       // test.xpath("//item[course-name='大学英语']");
-        //test.xpath("//item[@no='2']");
+        System.out.println("课时小于50的课程：");
+        System.out.println("******************");
+        test.xpath("//item[class-hour<50]");
+        System.out.println("课程名为高等数学：");
+        System.out.println("******************");
+        test.xpath("//item[course-name='高等数学']");
+        System.out.println("属性为001的课程");
+        System.out.println("******************");
+        test.xpath("//item[@no='001']");
        // test.xpath("//item[last]");
-       // test.xpath("//item[position<2]");
+        System.out.println("前两条课程信息：");
+        System.out.println("******************");
+        test.xpath("//item[position()<3]");
 
-        test.xpath("//item[1] |//item[3]");
+        //test.xpath("//item[1] |//item[2]");
+        System.out.println("第一个和最后一个课程信息：");
+        System.out.println("******************");
+        test.xpath("//item[1]");
+        test.xpath("//item[last()]");
 
 
 

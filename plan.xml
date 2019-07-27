@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE plan SYSTEM
-        "/Users/yangxiaoxiao/Documents/projects_test/moocstudy/plan.dtd">
+        "plan.dtd">
 <plan>
-    <item no="1">
+    <item no="001">
         <course-name>大学英语</course-name>
         <class-hour>36</class-hour>
         <exam-form>考试</exam-form>
     </item>
-    <item no="2">
+    <item no="002">
         <course-name>高等数学</course-name>
         <class-hour>70</class-hour>
         <exam-form>考试</exam-form>
     </item>
-    <item no="3">
+    <item no="003">
         <course-name>计算机应用基础</course-name>
         <class-hour>108</class-hour>
         <exam-form>上机考试</exam-form>
