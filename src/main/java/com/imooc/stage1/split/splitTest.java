@@ -8,7 +8,7 @@ import java.util.Set;
 public class splitTest {
     public static void main(String[] args) {
         String str="$.code:-1;$.msg:planId required;";
-        Map<String,String> map=new HashMap<>();
+        Map<String,String> map=new HashMap<String, String>();
         map=split(str,";",":");
         //获得keySet，再获取value
         Set<String> keySet=map.keySet();
@@ -27,7 +27,7 @@ public class splitTest {
     }
 
     public static Map split(String str,String sp1,String sp2){
-        Map<Object,Object> map=new HashMap<>();
+        Map<Object,Object> map=new HashMap<Object, Object>();
         String [] strArry=str.split(sp1);
         for(String string:strArry){
             String []strKeyValue=string.split(sp2);
