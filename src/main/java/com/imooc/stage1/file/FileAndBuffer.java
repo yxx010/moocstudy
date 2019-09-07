@@ -13,11 +13,12 @@ public class FileAndBuffer {
             long end=System.currentTimeMillis();
             long time=end-start;
             System.out.println("one.txt不用缓存流写用时:"+time);
+            //用缓存流方式写文件
             FileOutputStream fos1=new FileOutputStream("two.txt");
             BufferedOutputStream bos1=new BufferedOutputStream(fos1);
             long start1=System.currentTimeMillis();
             for (int i = 0; i <10000 ; i++) {
-                bos1.write('a');
+                bos1.write('b');
             }
             long end1=System.currentTimeMillis();
             long time1=end1-start1;
@@ -28,10 +29,10 @@ public class FileAndBuffer {
             bos1.close();
             fos1.close();
 
-            /*//读取时间
+            //读取时间
             FileInputStream fis=new FileInputStream("one.txt");
             long readstart=System.currentTimeMillis();
-            for (int i = 0; i <1000 ; i++) {
+            for (int i = 0; i <10000 ; i++) {
                 fis.read();
             }
             long readend=System.currentTimeMillis();
@@ -41,16 +42,15 @@ public class FileAndBuffer {
             FileInputStream fis1=new FileInputStream("two.txt");
             BufferedInputStream bfi1=new BufferedInputStream(fis1);
             long readstart1=System.currentTimeMillis();
-            for (int i = 0; i <1000 ; i++) {
+            for (int i = 0; i <10000 ; i++) {
                 bfi1.read();
             }
             long readend1=System.currentTimeMillis();
-            long readtime1=readend-readstart;
-            long time2=readtime1-readtime;
+            long readtime1=readend1-readstart1;
+            long time2=readtime-readtime1;
             System.out.println("two.txt缓存流读取时间为："+readtime1);
             System.out.println("节省时间"+time2);
 
-*/
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

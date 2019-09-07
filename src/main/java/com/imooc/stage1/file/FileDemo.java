@@ -5,7 +5,9 @@ import java.io.IOException;
 
 public class FileDemo {
     public static void main(String[] args) {
+        //获取或创建文件
         File file = getFile();
+        //展示文件属性
         showFile(file);
     }
 
