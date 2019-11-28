@@ -1,7 +1,6 @@
-package com.database.jdbc.stage1;
+package com.imooc.stage3.step1;
 
 
-import com.mysql.jdbc.Driver;
 import org.junit.Test;
 
 import java.sql.Connection;
