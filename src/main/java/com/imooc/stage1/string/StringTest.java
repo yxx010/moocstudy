@@ -12,6 +12,16 @@ public class StringTest {
         //使用replace方法替换
         System.out.println(str.replace(0,3,"欢迎来到"));
         System.out.println(str.replace(0,4,"你好！"));
+        String branch="origin/feature_zwq_20191114_platform";
+        branch=branch.substring(branch.indexOf("/")+1);
+        System.out.println(branch);
+        Long userId=1000l;
+        if ((userId & 1) == 1) {
+            System.out.println("奇数");
+        } else {
+            System.out.println("偶数");
+        }
+
 
     }
 }
