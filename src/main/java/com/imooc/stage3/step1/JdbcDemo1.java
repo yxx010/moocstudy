@@ -22,12 +22,7 @@ public class JdbcDemo1 {
             Statement statement=connection.createStatement();
             //3.2执行SQL
             ResultSet resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                int id=resultSet.getInt("id");
-                String name=resultSet.getString("name");
-                String realName=resultSet.getString("real_name");
-                System.out.println(id+" "+name+" "+realName);
-            }
+            printlbUser(resultSet);
             //释放资源
             resultSet.close();
             statement.close();
@@ -37,6 +32,16 @@ public class JdbcDemo1 {
             e.printStackTrace();
         }
     }
+
+    private void printlbUser(ResultSet resultSet) throws SQLException {
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            String realName = resultSet.getString("real_name");
+            System.out.println(id + " " + name + " " + realName);
+        }
+    }
+
     @Test
     public void demo2(){
         Connection connection=null;
@@ -56,13 +61,7 @@ public class JdbcDemo1 {
             statement=connection.createStatement();
             //3.2执行SQL
             resultSet=statement.executeQuery(sql);
-            while (resultSet.next()){
-                int id=resultSet.getInt("id");
-                String name=resultSet.getString("name");
-                String realName=resultSet.getString("real_name");
-                System.out.println(id+" "+name+" "+realName);
-            }
-
+            printlbUser(resultSet);
 
         } catch (Exception e) {
             e.printStackTrace();
