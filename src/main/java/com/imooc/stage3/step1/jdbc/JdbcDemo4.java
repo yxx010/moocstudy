@@ -1,4 +1,4 @@
-package com.imooc.stage3.step1;
+package com.imooc.stage3.step1.jdbc;
 
 import com.imooc.stage3.step1.utils.JDBCUtils;
 import org.junit.Test;
