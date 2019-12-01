@@ -1,6 +1,7 @@
 package com.imooc.stage3.step1;
 
 import com.imooc.stage3.step1.utils.JDBCUtils;
+import com.imooc.stage3.step1.utils.JDBCUtils2;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import org.junit.Test;
 
@@ -20,10 +21,11 @@ public class DataSourceDemo1 {
         ResultSet resultSet=null;
         try {
             //创建连接池
-            ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
+            //ComboPooledDataSource comboPooledDataSource=new ComboPooledDataSource();
             //设置连接池参数
             //获得连接
-            connection=comboPooledDataSource.getConnection();
+            //connection=comboPooledDataSource.getConnection();
+            connection= JDBCUtils2.getConnection();
             String sql="select * from user";
             //预编译sql
             preparedStatement=connection.prepareStatement(sql);
@@ -35,7 +37,7 @@ public class DataSourceDemo1 {
         } catch (Exception e) {
             e.printStackTrace();
         }finally {
-            JDBCUtils.release(preparedStatement,resultSet,connection);
+            JDBCUtils2.release(preparedStatement,resultSet,connection);
         }
     }
     @Test
