@@ -29,15 +29,15 @@ public class FiledTest {
         //获得私有属性getDeclaredField
         Field field=class1.getDeclaredField("sex");
         //操作属性
-        Person p=(Person)class1.newInstance();
+        Person person=(Person)class1.newInstance();
         //私有属性设置可访问权限
         field.setAccessible(true);
         //给私有属性设置值
-        field.set(p,"男");//p.sex="李四";
+        field.set(person,"男");//person.sex="李四";
         //获取该对象私有属性的值
-        Object object=field.get(p);
+        Object object=field.get(person);
         //打印获取的私有属性的值
         System.out.println(object);
-        System.out.println(p);
+        System.out.println(person);
     }
 }
