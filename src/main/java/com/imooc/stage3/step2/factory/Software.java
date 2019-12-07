@@ -9,5 +9,7 @@ import com.imooc.stage3.step2.factory.i18n.I18NFactory;
 public class Software {
     public static void main(String[] args) {
         I18N i18N= I18NFactory.getI18NObject("china");
+        System.out.println(i18N.getTitle());
+
     }
 }
