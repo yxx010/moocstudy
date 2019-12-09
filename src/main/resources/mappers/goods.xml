@@ -73,9 +73,9 @@
     <insert id="insert" parameterType="com.imooc.mybatis.entity.Goods" flushCache="true">
         INSERT INTO t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
         VALUES (#{title} , #{subTitle} , #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
-      <!--<selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">-->
-          <!--select last_insert_id()-->
-      <!--</selectKey>-->
+      <!--selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
+          select last_insert_id()
+      </selectKey-->
     </insert>
 
     <update id="update" parameterType="com.imooc.mybatis.entity.Goods">

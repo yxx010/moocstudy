@@ -134,5 +134,64 @@ public class MyBatisTestor {
             MyBatisUtils.closeSession(sqlSession);
         }
     }
+    @Test
+    public void testInsert(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=new Goods();
+            goods.setTitle("测试商品1");
+            goods.setSubTitle("测试子标题1");
+            goods.setOriginalCost(200f);
+            goods.setCurrentPrice(100f);
+            goods.setDiscount(0.5f);
+            goods.setIsFreeDelivery(1);
+            goods.setCategoryId(43);
+            int num=sqlSession.insert("goods.insert",goods);
+            sqlSession.commit();
+            System.out.println(goods.getGoodsId());
+        }catch (Exception e){
+            if(sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testUpdate(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",739);
+            goods.setTitle("更新测试商品");
+            int num=sqlSession.update("goods.update",goods);
+            sqlSession.commit();
+        }catch (Exception e){
+            if(sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testDelete(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            int num=sqlSession.delete("goods.delete",739);
+            sqlSession.commit();
+        }catch (Exception e){
+            if(sqlSession!=null){
+                sqlSession.rollback();
+            }
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
 
 }

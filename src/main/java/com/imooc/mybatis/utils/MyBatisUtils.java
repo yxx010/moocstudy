@@ -24,7 +24,11 @@ public class MyBatisUtils {
     }
 
     public static SqlSession openSession() {
-        return sqlSessionFactory.openSession();
+        // 自动提交事务
+        // return sqlSessionFactory.openSession();
+        // 手动提交事务
+        return sqlSessionFactory.openSession(false);
+
     }
 
     public static void closeSession(SqlSession sqlSession){
