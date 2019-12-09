@@ -63,8 +63,6 @@
         <result property="category.parentId" column="parent_id"></result>
         <result property="category.categoryLevel" column="category_level"></result>
         <result property="category.categoryOrder" column="category_order"></result>
-
-
         <result property="test" column="test"/>
     </resultMap>
     <select id="selectGoodsDTO" resultMap="rmGoods">
