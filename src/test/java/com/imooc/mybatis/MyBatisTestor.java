@@ -194,4 +194,77 @@ public class MyBatisTestor {
         }
     }
 
+    @Test
+    public void testDynamicSQL(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Map map=new HashMap();
+            map.put("categoryId",44);
+            map.put("currentPrice",100);
+            List<Goods> goods=sqlSession.selectList("goods.dynamicSQL",map);
+            for (Goods g:goods) {
+                System.out.println(g.getTitle()+" "+g.getCategoryId()+" "+g.getCurrentPrice());
+            }
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testLv1Cache(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",1603);
+            Goods goods1=sqlSession.selectOne("goods.selectById",1603);
+            System.out.println(goods.getTitle()+" "+goods1.getTitle());
+            System.out.println(goods.hashCode()+" "+goods1.hashCode());
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",1603);
+            Goods goods1=sqlSession.selectOne("goods.selectById",1603);
+            System.out.println(goods.getTitle()+" "+goods1.getTitle());
+            System.out.println(goods.hashCode()+" "+goods1.hashCode());
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+
+    @Test
+    public void testLv2Cache(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",1603);
+            System.out.println(goods.hashCode());
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            Goods goods=sqlSession.selectOne("goods.selectById",1603);
+            System.out.println(goods.hashCode());
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
 }
