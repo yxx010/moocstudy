@@ -2,6 +2,7 @@ package com.imooc.mybatis;
 
 import com.imooc.mybatis.dto.GoodsDTO;
 import com.imooc.mybatis.entity.Goods;
+import com.imooc.mybatis.entity.GoodsDetail;
 import com.imooc.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -261,6 +262,23 @@ public class MyBatisTestor {
             Goods goods=sqlSession.selectOne("goods.selectById",1603);
             System.out.println(goods.hashCode());
 
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testOneToMany(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            List<Goods> list=sqlSession.selectList("goods.selectOneToMany");
+            for (Goods goods:list){
+                System.out.println(goods.getTitle()+" size:"+goods.getGoodsDetails().size());
+                System.out.println(goods.getGoodsDetails());
+
+            }
         }catch (Exception e){
             throw e;
         }finally {

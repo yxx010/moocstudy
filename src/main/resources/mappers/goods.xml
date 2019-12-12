@@ -131,7 +131,7 @@
                     column="goods_id"/>
     </resultMap>
     <select id="selectOneToMany" resultMap="rmGoods1">
-        select * from t_goods limit 0,10
+        select * from t_goods limit 0,1
     </select>
 
     <select id="selectPage" resultType="com.imooc.mybatis.entity.Goods">
