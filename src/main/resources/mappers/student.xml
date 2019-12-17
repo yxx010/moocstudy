@@ -18,6 +18,13 @@
     <select id="selectManyToOne" resultMap="rmStudent">
         select * from student limit 4
     </select>
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into student values
+        <foreach collection="list" item="item" index="index" separator=",">
+        (null,#{item.stuno},#{item.stuname},#{item.sex},#{item.classno})
+
+        </foreach>
+    </insert>
 
 
 </mapper>

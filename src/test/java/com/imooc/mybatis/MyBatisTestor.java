@@ -1,5 +1,8 @@
 package com.imooc.mybatis;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.imooc.mybatis.dto.GoodsDTO;
 import com.imooc.mybatis.entity.Goods;
 import com.imooc.mybatis.entity.GoodsDetail;
@@ -13,9 +16,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.Reader;
 import java.sql.Connection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 public class MyBatisTestor {
@@ -297,6 +298,57 @@ public class MyBatisTestor {
 
         }catch (Exception e){
             throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testSelectPage(){
+        SqlSession sqlSession=null;
+        try {
+            sqlSession=MyBatisUtils.openSession();
+            PageHelper.startPage(2,10);
+            Page<Goods> page=(Page)sqlSession.selectList("goods.selectPage");
+            System.out.println("总页数："+page.getPages());
+            System.out.println("总记录数："+page.getTotal());
+            System.out.println("开始行号："+page.getStartRow());
+            System.out.println("结束行号："+page.getEndRow());
+            System.out.println("当前页码："+page.getPageNum());
+            List<Goods> data=page.getResult();//当前页数据
+            for (Goods goods:data) {
+                System.out.println(goods.getTitle());
+            }
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+
+    @Test
+    public void testBatchInsert(){
+        SqlSession sqlSession=null;
+        try {
+            Long st=new Date().getTime();
+            sqlSession=MyBatisUtils.openSession();
+            List <Goods> list=new ArrayList<>();
+            for (int i = 0; i <1000 ; i++) {
+                Goods goods=new Goods();
+                goods.setTitle("测试商品1");
+                goods.setSubTitle("测试子标题1");
+                goods.setOriginalCost(200f);
+                goods.setCurrentPrice(100f);
+                goods.setDiscount(0.5f);
+                goods.setIsFreeDelivery(1);
+                goods.setCategoryId(43);
+                list.add(goods);
+            }
+            sqlSession.insert("goods.batchInsert",list);
+            Long et=new Date().getTime();
+            System.out.println("执行这段时间花了"+(et-st)+"毫秒");
+        }catch (Exception e){
+            throw  e;
         }finally {
             MyBatisUtils.closeSession(sqlSession);
         }

@@ -8,6 +8,8 @@ import com.imooc.mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -38,6 +40,35 @@ public class MyBatisTestor1 {
             for(Student student:list){
                 System.out.println(student.getStuname()+" "+student.getClasses().getName()+" "+student.getClassno());
             }
+
+        }catch (Exception e){
+            throw e;
+        }finally {
+            MyBatisUtils.closeSession(sqlSession);
+        }
+    }
+    @Test
+    public void testBatchInsert(){
+        SqlSession sqlSession=null;
+        try{
+            long st=new Date().getTime();
+            sqlSession=MyBatisUtils.openSession();
+            List<Student> list=new ArrayList<>();
+            for (int i = 0; i <1000 ; i++) {
+                Student student=new Student();
+                student.setStuno("2018"+i);
+                student.setStuname("测试"+i);
+                student.setSex("男");
+                if(i%2==0){
+                    student.setClassno("Class02");
+                }else{
+                    student.setClassno("Class01");
+                }
+                list.add(student);
+            }
+            sqlSession.insert("student.batchInsert",list);
+            Long et=new Date().getTime();
+            System.out.println("执行这段时间花了"+(et-st)+"毫秒");
 
         }catch (Exception e){
             throw e;

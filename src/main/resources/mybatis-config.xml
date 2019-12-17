@@ -8,9 +8,15 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <!--启用Pagehelper分页插件-->
-    
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+            <!--分页合理化 -->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
     <!--设置默认指向的数据库-->
-    <environments default="dev">
+    <environments default="c3p0">
         <!--配置环境，不同的环境不同的id名字-->
         <environment id="dev">
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
@@ -25,23 +31,29 @@
                 <!--...-->
             </dataSource>
         </environment>
-        <environment id="prd">
+        <environment id="c3p0">
             <!-- 采用JDBC方式对数据库事务进行commit/rollback -->
             <transactionManager type="JDBC"></transactionManager>
             <!--采用连接池方式管理数据库连接-->
-            <dataSource type="POOLED">
-                <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://192.168.1.155:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
-                <property name="username" value="root"/>
+            <dataSource type="com.imooc.mybatis.datasource.C3P0DataSourceFactory">
+                <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+                <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/babytun?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="user" value="root"/>
                 <property name="password" value="12345678"/>
+                <property name="initialPoolSize" value="5"/>
+                <property name="maxPoolSize" value="20"/>
+                <property name="minPoolSize" value="5"/>
             </dataSource>
         </environment>
     </environments>
-
     <mappers>
+        <!--使用非注解的方式-->
         <mapper resource="mappers/goods.xml"/>
         <mapper resource="mappers/goods_detail.xml"/>
         <mapper resource="mappers/student.xml"/>
         <mapper resource="mappers/classes.xml"/>
+        <!--使用注解的方式 -->
+        <!--mapper class="com.imooc.mybatis.dao.GoodsDao"/-->
+        <package name="com.imooc.mybatis.dao"/>
     </mappers>
 </configuration>
