@@ -1,5 +1,5 @@
 package com.imooc.basic.Single;
-
+//懒汉式单例模式
 public class Emperor {
     //定义私有构造方法
     private Emperor(){
