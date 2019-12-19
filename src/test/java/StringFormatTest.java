@@ -14,6 +14,7 @@ public class StringFormatTest {
             String nickname = oldNickName + String.format(str,i + 1);
             System.out.println(nickname);
         }
+        //master1
     }
 
 }
