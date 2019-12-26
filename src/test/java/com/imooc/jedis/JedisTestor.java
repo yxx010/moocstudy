@@ -9,34 +9,43 @@ import java.util.Map;
 
 public class JedisTestor {
     @Test
-    public void JedisDemo(){
-        Jedis jedis=new Jedis("127.0.0.1",6379);
-        try{
+    public void JedisDemo() {
+        Jedis jedis = new Jedis("127.0.0.1", 6379);
+        try {
             jedis.auth("Redis@123");
             jedis.select(2);
             System.out.println("redis连接成功");
-            jedis.set("sn","test1");
-            String sn=jedis.get("sn");
-            System.out.println("sn="+sn);
-            jedis.mset(new String[]{"title","婴幼儿奶粉","num","20"});
-            List<String> goods=jedis.mget(new String[]{"sn","title","num"});
+            jedis.set("sn", "test1");
+            String sn = jedis.get("sn");
+            System.out.println("sn=" + sn);
+            jedis.mset(new String[]{"title", "婴幼儿奶粉", "num", "20"});
+            List<String> goods = jedis.mget(new String[]{"sn", "title", "num"});
             System.out.println(goods);
-            Long num=jedis.incr("num");
-            System.out.println("自增后num值为："+num);
+            Long num = jedis.incr("num");
+            System.out.println("自增后num值为：" + num);
             //hash
-            jedis.hset("student:001","name","李兰");
-            System.out.println(jedis.hget("student:001","name"));
-            Map<String,String> studentMap=new HashMap<>();
-            studentMap.put("name","小明");
-            studentMap.put("age","12");
-            studentMap.put("id","3312");
-            jedis.hmset("student:3313",studentMap);
-            Map <String,String> smp=jedis.hgetAll("student:3313");
-            System.out.println("显示hgetall的值"+smp);
+            jedis.hset("student:001", "name", "李兰");
+            System.out.println(jedis.hget("student:001", "name"));
+            Map<String, String> studentMap = new HashMap<>();
+            studentMap.put("name", "小明");
+            studentMap.put("age", "12");
+            studentMap.put("id", "3312");
+            jedis.hmset("student:3313", studentMap);
+            Map<String, String> smp = jedis.hgetAll("student:3313");
+            System.out.println("显示hgetall的值" + smp);
+            //list
+            jedis.del("letter");
+            jedis.lpush("letter", new String[]{"c", "b", "a"});
+            jedis.rpush("letter", "d", "e", "f");
+            List<String> list = jedis.lrange("letter", 0, -1);
+            System.out.println("list值为：" + list);
+            jedis.lpop("letter");
+            jedis.rpop("letter");
+            System.out.println("左右弹出后值为:" + jedis.lrange("letter", 0, -1));
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             jedis.close();
 
         }
