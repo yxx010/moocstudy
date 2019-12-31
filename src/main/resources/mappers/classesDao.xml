@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.mybatis.dao.ClassesDao">
+    <select id="selectById" parameterType="Integer" resultType="com.imooc.mybatis.entity.Classes">
+        select * from classes where id=#{value}
+    </select>
+    <select id="selectByClassno" parameterType="String" resultType="com.imooc.mybatis.entity.Classes">
+        select * from classes where classno=#{value}
+    </select>
+    <resultMap id="classesStudent" type="com.imooc.mybatis.entity.Classes">
+        <id column="classno" property="classno"></id>
+        <collection property="students" select="student.selectByClassno" column="classno"></collection>
+    </resultMap>
+    <select id="selectOneToMany" resultMap="classesStudent">
+        select * from classes limit 1
+    </select>
+</mapper>

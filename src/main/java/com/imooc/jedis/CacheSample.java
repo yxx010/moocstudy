@@ -1,9 +1,7 @@
 package com.imooc.jedis;
 
 import com.alibaba.fastjson.JSON;
-import org.junit.Test;
 import redis.clients.jedis.Jedis;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
