@@ -49,5 +49,14 @@
     <bean id="person2" class="com.imooc.ioc.demo4.Person" p:name="大黄" p:age="30" p:cat-ref="cat1">
     </bean>
     <bean id="cat1" class="com.imooc.ioc.demo4.Cat" p:name="小黄"/>
-
+    <!--bean的SpEL方式注入 -->
+    <bean id="category" class="com.imooc.ioc.demo4.Category">
+        <property name="name" value="#{'服装'}"/>
+    </bean>
+    <bean id="productInfo" class="com.imooc.ioc.demo4.ProductInfo"/>
+    <bean id="product" class="com.imooc.ioc.demo4.Product">
+        <property name="name" value="#{'男装'}"/>
+        <property name="price" value="#{productInfo.calculatePrice()}"/>
+        <property name="category" value="#{category}"/>
+    </bean>
 </beans>
