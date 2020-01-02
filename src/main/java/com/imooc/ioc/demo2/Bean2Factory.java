@@ -5,7 +5,7 @@ package com.imooc.ioc.demo2;
  */
 public class Bean2Factory {
     public static Bean2 createBean2(){
-        System.out.println("bean2也实例化了");
+        System.out.println("bean2的静态实例工厂");
         return new Bean2();
     }
 }

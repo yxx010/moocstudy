@@ -1,31 +1,53 @@
-package com.imooc.ioc.demo2;
+package com.imooc.ioc.demo4;
 
+import com.imooc.ioc.demo3.Man;
+import com.imooc.ioc.demo3.UserDao;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringDemo2 {
+/**
+ * bean的作用范围 默认单例,配置scope可改变作用范围
+ * 现在是每次getBean获得新的一个实例
+ */
+public class SpringDemo4 {
     @Test
+    /**
+     *带参构造方法属性注入
+     */
     public void demo1(){
         //创建工厂
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
         //通过工厂获得类的实例
-        Bean1 bean1=(Bean1) applicationContext.getBean("bean1");
+        User user=(User) applicationContext.getBean("user");
+        System.out.println(user);
+
     }
-    //静态实例工厂
     @Test
+    /**
+     * set方法属性注入
+     */
     public void demo2(){
         //创建工厂
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
         //通过工厂获得类的实例
-        Bean2 bean2=(Bean2) applicationContext.getBean("bean2");
+        Person person=(Person) applicationContext.getBean("person1");
+        System.out.println(person);
+
     }
-    //非静态实例工厂
     @Test
+    /**
+     * p命名空间的属性注入
+     */
     public void demo3(){
         //创建工厂
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
         //通过工厂获得类的实例
-        Bean3 bean3=(Bean3) applicationContext.getBean("bean3");
+        Person person=(Person) applicationContext.getBean("person2");
+        System.out.println(person);
+
     }
+
+
+
 }
