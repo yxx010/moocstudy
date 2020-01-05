@@ -59,4 +59,43 @@
         <property name="price" value="#{productInfo.calculatePrice()}"/>
         <property name="category" value="#{category}"/>
     </bean>
+    <bean id="collectionBean" class="com.imooc.ioc.demo5.CollectionBean">
+        <!--数组类型-->
+        <property name="arrs">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <!--list集合注入-->
+        <property name="list">
+            <list>
+                <value>111</value>
+                <value>222</value>
+                <value>333</value>
+            </list>
+        </property>
+        <!--set属性注入-->
+        <property name="set">
+            <set>
+                <value>ddd</value>
+                <value>eee</value>
+                <value>fff</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="aaa" value="111"></entry>
+                <entry key="bbb" value="222"></entry>
+                <entry key="ccc" value="333"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">1234</prop>
+            </props>
+        </property>
+    </bean>
 </beans>
