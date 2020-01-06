@@ -14,5 +14,23 @@ public class SpringDemo6 {
         System.out.println(s);
 
     }
+    @Test
+    public void demo2(){
+        //创建工厂
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext1.xml");
+        //通过工厂获得类的实例
+        UserService userService=(UserService) applicationContext.getBean("userService");
+        userService.eat();
+
+    }
+    @Test
+    public void demo3(){
+        //创建工厂
+        ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext1.xml");
+        //通过工厂获得类的实例
+        UserService userService=(UserService) applicationContext.getBean("userService");
+        userService.save();
+
+    }
 
 }

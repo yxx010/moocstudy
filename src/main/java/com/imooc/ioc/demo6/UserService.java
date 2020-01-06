@@ -1,5 +1,8 @@
 package com.imooc.ioc.demo6;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +16,25 @@ import org.springframework.stereotype.Service;
 //@Component("userService")
 @Service("userService")
 public class UserService {
+    @Value("米饭")
+    private String something;
+    /**
+     * @Autowired
+     * @Qualifier("userDao2")  两者配合相当于 @resource(name="userDao")
+     * @Qualifier("userDao2")与userDao的@Repository("userDao1")名字一致
+     */
+    @Autowired
+    private UserDao userDao;
+
     public String sayHello(String name){
         return "Hello"+name;
     }
+    public void eat(){
+        System.out.println("eat:"+something);
+    }
+    public void save(){
+        System.out.println("Service保存用户");
+        userDao.save();
+    }
+
 }
