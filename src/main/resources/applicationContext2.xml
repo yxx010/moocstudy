@@ -5,13 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 <!--开启注解扫描，就不需要单独开annotation-config-->
-    <!--context:component-scan base-package="com.imooc.ioc"/-->
+    <!--context:component-scan base-package="com.imooc.step4.ioc"/-->
     <context:annotation-config></context:annotation-config>
-    <bean id="productService" class="com.imooc.ioc.demo8.ProductService">
+    <bean id="productService" class="com.imooc.step4.ioc.demo8.ProductService">
         <!--xml方式需要有set方法-->
         <!--property name="productDao" ref="productDao"/>
         <property name="categoryDao" ref="categoryDao"/-->
     </bean>
-    <bean id="productDao" class="com.imooc.ioc.demo8.ProductDao"/>
-    <bean id="categoryDao" class="com.imooc.ioc.demo8.CategoryDao"/>
+    <bean id="productDao" class="com.imooc.step4.ioc.demo8.ProductDao"/>
+    <bean id="categoryDao" class="com.imooc.step4.ioc.demo8.CategoryDao"/>
 </beans>
