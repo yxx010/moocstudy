@@ -11,7 +11,7 @@ private ClassesDao classesDao;
 
 public class MyBatisClassesDaoTest {
     @Test
-  public void demo(){
+  public void demo4(){
         public void testSelectById(){
             SqlSession sqlSession=null;
             try {
