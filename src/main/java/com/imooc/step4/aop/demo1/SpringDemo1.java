@@ -9,12 +9,14 @@ public class SpringDemo1 {
          *
          */
         UserDao userDao=new UserDaoImpl();
-        /*userDao.save();
+        userDao.save();
         userDao.update();
         userDao.delete();
-        userDao.find();*/
+        userDao.find();
 
-        //目标类增强,代理方法，JDK的动态代理
+        /**
+         *使用jdk动态代理方式，对目标类增强
+         */
         UserDao proxy=(UserDao) new MyJdkProxy(userDao).createProxy();
         proxy.save();
         proxy.update();

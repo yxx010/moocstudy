@@ -13,6 +13,6 @@
         <property name="pattern" value="com.imooc.step4.aop.demo6.CustomerDao.save"></property>
         <property name="advice" ref="myAroundAdvice"></property>
     </bean>
-
+    <!--基于切面的自动代理方式-->
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"></bean>
 </beans>

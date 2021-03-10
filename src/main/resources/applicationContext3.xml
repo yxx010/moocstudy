@@ -12,7 +12,7 @@
         <property name="target" ref="studentDao"></property>
         <!--实现的接口-->
         <property name="proxyInterfaces" value="com.imooc.step4.aop.demo3.StudentDao"/>
-        <!--采用拦截的名称；需要织入目标的Advice-->
+        <!--采用拦截的名称；需要织入目标的Advice，目标实现接口的，用interceptorNames-->
         <property name="interceptorNames" value="myBeforeAdvice"/>
         <!--不设置默认是jdk的方式，设置为true用cglib的方式-->
         <property name="optimize" value="true"></property>
