@@ -7,6 +7,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+/**
+ * 切面的自动代理方式
+ */
 //一般切面案例
 //需要在pom里增加spring-test的依赖才能用这个注解，step>ioc下有不使用注解的方式
 @RunWith(SpringJUnit4ClassRunner.class)

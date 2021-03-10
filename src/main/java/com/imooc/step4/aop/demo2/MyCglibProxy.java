@@ -6,6 +6,10 @@ import org.springframework.cglib.proxy.MethodProxy;
 
 import java.lang.reflect.Method;
 
+/**
+ 底层实现是生成一个类，继承目标类，再进行增强。没有接口可使用CGLIB方式。
+ 这是底层实现方法，实际使用使用spring的配置
+*/
 public class MyCglibProxy implements MethodInterceptor {
     //需要先引入Spring的4个包
     private ProductDao productDao;
@@ -13,7 +17,7 @@ public class MyCglibProxy implements MethodInterceptor {
         this.productDao=productDao;
     }
     public Object createProxy(){
-        //1.创建核心类
+        //1.创建cglib核心类
         Enhancer enhancer=new Enhancer();
         //2.设置父类
         enhancer.setSuperclass(productDao.getClass());

@@ -7,6 +7,7 @@ public class MyAroundAdvice implements MethodInterceptor {
     @Override
     public Object invoke(MethodInvocation methodInvocation) throws Throwable {
         System.out.println("环绕前增强");
+        //执行目标方法
         Object object=methodInvocation.proceed();
         System.out.println("环绕后增强");
         return object;
