@@ -7,5 +7,8 @@
 
     <!--开启AspectJ的注解开发，自动代理=====================-->
     <aop:aspectj-autoproxy/>
-
+    <!--定义目标类-->
+    <bean id="productDao" class="com.imooc.step4.aspectj.demo1.ProductDao"></bean>
+    <!--定义切面-->
+    <bean class="com.imooc.step4.aspectj.demo1.MyAspectAnno"></bean>
 </beans>

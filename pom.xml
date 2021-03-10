@@ -103,12 +103,6 @@
             <artifactId>commons-logging</artifactId>
             <version>1.2</version>
         </dependency>
-        <!--使用注解方式使用spring-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>5.1.8.RELEASE</version>
-        </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -116,13 +110,30 @@
         </dependency>
         <!--以上spring的依赖 -->
         <!--spring的4个基础依赖，spring-aop，再加aopalliance
-         配合使用，spring切面-->
+         配合使用，spring切面,传统aop需要这6个-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>5.1.8.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>aopalliance</groupId>
             <artifactId>aopalliance</artifactId>
             <version>1.0</version>
         </dependency>
-<!--单元测试使用的配置文件-->
+        <!--使用注解方式使用aspectj——aop-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.1.8.RELEASE</version>
+        </dependency>
+
+        <!--单元测试使用的配置文件-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
