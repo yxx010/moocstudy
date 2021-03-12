@@ -16,6 +16,9 @@ public class SpringDemo7 {
         applicationContext.close();
 
     }
+    /**
+     * 测试单例/多例注解
+     */
     @Test
     public void demo2(){
         //创建工厂
@@ -24,7 +27,7 @@ public class SpringDemo7 {
         Bean2 bean1=(Bean2) applicationContext.getBean("bean2");
         Bean2 bean2=(Bean2) applicationContext.getBean("bean2");
         //默认单例时，两个地址相等;scope为prototype时不相等
-        System.out.println(bean1==bean2);
+        System.out.println("是单例:"+ (bean1==bean2));
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.FileSystemResource;
 
 public class SpringDemo1 {
     @Test
@@ -27,6 +28,7 @@ public class SpringDemo1 {
      * Spring的方式实现
      * 1.建一个applicationContext文件
      * 2.配置bean Id
+     * 3.依赖注入，将类的属性放在配置文件中，无需修改代码
      */
     public void Demo2(){
         //创建Spring的工厂
@@ -35,7 +37,11 @@ public class SpringDemo1 {
         UserService userService=(UserService) applicationContext.getBean("userService");
         userService.sayHello();
     }
-@Test
+
+    /**
+     * 课后作业
+     */
+    @Test
     public void foodTest(){
         //创建Spring的工厂
         ApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -52,13 +58,25 @@ public class SpringDemo1 {
         Food food=(Food) applicationContext.getBean("food");
         System.out.println(food.toString());
     }
-@Test
-/**
- * 传统方式的工厂类：BeanFactory
- */
+    @Test
+    /**
+     * 传统方式的工厂类：BeanFactory
+     */
     public void demo4(){
         //创建工厂类
         BeanFactory beanFactory=new XmlBeanFactory(new ClassPathResource("applicationContext.xml"));
+        //通过工厂获得类
+        UserService userService=(UserService) beanFactory.getBean("userService");
+        userService.sayHello();
+    }
+
+    @Test
+    /**
+     * 传统方式的工厂类：BeanFactory 读取磁盘配置文件
+     */
+    public void demo5(){
+        //创建工厂类
+        BeanFactory beanFactory=new XmlBeanFactory(new FileSystemResource("//Users/yangxiaoxiao/Documents/projects_test/moocstudy/src/main/resources/applicationContext.xml"));
         //通过工厂获得类
         UserService userService=(UserService) beanFactory.getBean("userService");
         userService.sayHello();

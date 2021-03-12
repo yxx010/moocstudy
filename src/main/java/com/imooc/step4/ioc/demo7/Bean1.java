@@ -10,14 +10,14 @@ import javax.annotation.PreDestroy;
  */
 @Component
 public class Bean1 {
-    @PostConstruct
+    @PostConstruct  //初始化注解
     public void init(){
         System.out.println("initBean");
     }
     public void say(){
         System.out.println("say");
     }
-    @PreDestroy
+    @PreDestroy //销毁注解
     public void destroy(){
         System.out.println("destroy");
     }

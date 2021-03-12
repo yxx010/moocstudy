@@ -4,6 +4,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
+@Scope("prototype") //默认是单例
 public class Bean2 {
 }

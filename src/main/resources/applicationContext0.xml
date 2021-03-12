@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--测试bean的作用域 scope可配置单例、多例-->
+    <bean id="person" class="com.imooc.step4.ioc.demo3.Person" scope="prototype"></bean>
+    <!--bean的生命周期 -->
+    <bean id="man" class="com.imooc.step4.ioc.demo3.Man" init-method="setup" destroy-method="tearDown">
+        <property name="name" value="张三"/>
+    </bean>
+    <!--实例化过程中用到的，会自动调用，生命周期第5、8步，可以做增强-->
+    <bean class="com.imooc.step4.ioc.demo3.MyBeanPostProcessor"/>
+    <!--bean的增强：postProcessAfterInitialization -->
+    <bean id="userDao" class="com.imooc.step4.ioc.demo3.UserDaoImpl"></bean>
+</beans>

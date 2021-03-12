@@ -3,7 +3,12 @@ package com.imooc.step4.ioc.demo2;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+/**
+ * 测试bean的实例化的三种方式：
+ * 1.无参构造器的方式
+ * 2.静态工厂实例的方式
+ * 3.实例工厂的方式
+ */
 public class SpringDemo2 {
     @Test
     public void demo1(){
