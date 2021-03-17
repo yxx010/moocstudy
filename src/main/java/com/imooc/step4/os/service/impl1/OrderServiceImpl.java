@@ -1,4 +1,4 @@
-package com.imooc.step4.os.service.impl;
+package com.imooc.step4.os.service.impl1;
 
 import com.imooc.step4.os.dao.OrderDao;
 import com.imooc.step4.os.dao.ProductDao;
@@ -12,13 +12,8 @@ import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 
 import java.util.Date;
-
 /**
- * spring声明式事务管理:
- * 1.基于TransactionInterceptor的声明式事务处理
- * 2.基于TransactionProxyFactoryBean的声明式事务处理
- * 3.基于tx命名空间的声明式事务管理
- * 4.基于@Transactional的声明式事务管理
+ * 基于底层API的编程式事务管理
  */
 
 @Service
@@ -27,13 +22,24 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao;
     @Autowired
     private ProductDao productDao;
+    @Autowired
+    private PlatformTransactionManager transactionManager;
+    @Autowired
+    private TransactionDefinition transactionDefinition;
     @Override
     public void addOrder(Order order) {
         order.setCreateTime(new Date());
         order.setStatus("待付款");
+        TransactionStatus transactionStatus = transactionManager.getTransaction(transactionDefinition);
+        try{
             orderDao.insert(order);
             Product product=productDao.select(order.getProductsId());
             product.setStock(product.getStock()-order.getNumber());
             productDao.update(product);
+            transactionManager.commit(transactionStatus);
+        }catch (Exception e){
+            e.printStackTrace();
+            transactionManager.rollback(transactionStatus);
+        }
     }
 }

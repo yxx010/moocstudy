@@ -12,13 +12,12 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd">
-<import resource="springStepOsDao.xml"/>
-    <context:component-scan base-package="com.imooc.step4.os.service.impl"/>
-    <bean id="transationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <!--4.基于@Transactional的声明式事务管理-->
+    <import resource="spring-step4-os-dao.xml"/>
+    <context:component-scan base-package="com.imooc.step4.os.service.impl6"/>
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <bean id="transactionDefined" class="org.springframework.transaction.support.DefaultTransactionDefinition">
-        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
-    </bean>
-
+    <!--注解驱动-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

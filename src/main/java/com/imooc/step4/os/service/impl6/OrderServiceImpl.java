@@ -1,4 +1,4 @@
-package com.imooc.step4.os.service.impl;
+package com.imooc.step4.os.service.impl6;
 
 import com.imooc.step4.os.dao.OrderDao;
 import com.imooc.step4.os.dao.ProductDao;
@@ -7,9 +7,7 @@ import com.imooc.step4.os.entity.Product;
 import com.imooc.step4.os.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionDefinition;
-import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
@@ -27,6 +25,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderDao orderDao;
     @Autowired
     private ProductDao productDao;
+    // @Transactional(propagation =Propagation.REQUIRED) 括号里定义的事务传播行为，默认就是这个
+    @Transactional
     @Override
     public void addOrder(Order order) {
         order.setCreateTime(new Date());
