@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
     <import resource="spring-step4-os-dao.xml"/>
-    <!--1.基于TransactionInterceptor的声明式事务处理-->
+    <!--1.基于TransactionInterceptor（事务拦截器）的声明式事务处理-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>

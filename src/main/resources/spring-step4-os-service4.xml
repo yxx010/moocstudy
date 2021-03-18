@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--2.基于TransactionProxyFactoryBean的声明式事务处理-->
+    <!--2.基于TransactionProxyFactoryBean（事务代理工厂bean）的声明式事务处理-->
     <import resource="spring-step4-os-dao.xml"/>
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
