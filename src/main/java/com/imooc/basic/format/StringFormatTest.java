@@ -1,3 +1,5 @@
+package com.imooc.basic.format;
+
 public class StringFormatTest {
     public static void main(String[] args) {
 
@@ -14,7 +16,6 @@ public class StringFormatTest {
             String nickname = oldNickName + String.format(str,i + 1);
             System.out.println(nickname);
         }
-        //master1
     }
 
 }

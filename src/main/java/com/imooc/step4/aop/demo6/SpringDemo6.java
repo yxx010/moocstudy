@@ -24,12 +24,13 @@ public class SpringDemo6 {
 
     @Test
     public void demo1(){
+        //如有增强会自动走cglib动态代理
         customerDao.find();
         customerDao.find1();
         customerDao.save();
         customerDao.update();
         customerDao.delete();
-
+        //如有增强自动走jdk动态代理
         studentDao.find();
         studentDao.save();
         studentDao.update();
