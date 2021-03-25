@@ -9,10 +9,11 @@ import javax.annotation.Resource;
 /**
  * 通知类型：前置、后置、环绕、异常抛出通知、引介通知
  * 使用注解方式使用aop,pom需要引入aopalliance、spring-aop
- * 不带切入点的案例
+ * 一般切面案例
  */
-//一般切面案例，该案例实现的是前置通知,配置文件中optimize为true是cglib方式，否则是jdk方式
-//需要在pom里增加spring-test的依赖才能用这个注解runwith，step>ioc下有不使用注解的方式
+// 一般切面案例（拦截目标类所有方法,对所有方法增强），该案例实现的是前置通知
+// 配置文件中optimize为true是cglib方式，否则是jdk方式
+// 需要在pom里增加spring-test的依赖才能用这个注解runwith，step>ioc下有不使用注解的方式
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext3.xml")
 public class SpringDemo3 {

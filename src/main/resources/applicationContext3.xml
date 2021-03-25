@@ -14,7 +14,7 @@
         <property name="proxyInterfaces" value="com.imooc.step4.aop.demo3.StudentDao"/>
         <!--采用拦截的名称；需要织入目标的Advice，目标实现接口的，用interceptorNames-->
         <property name="interceptorNames" value="myBeforeAdvice"/>
-        <!--不设置默认是jdk的方式，设置为true用cglib的方式-->
+        <!--不设置默认是jdk的方式，设置为true用cglib的方式，实现过接口的jdk和cglib方式都可以使用-->
         <property name="optimize" value="true"></property>
     </bean>
 </beans>
