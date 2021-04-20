@@ -13,7 +13,7 @@ public class MyThread extends Thread {
 
     public static void main(String[] args) {
         System.out.println("主线程的优先级为："+Thread.currentThread().getPriority());
-        MyThread mt=new MyThread("打印机");
+        MyThread mt=new MyThread("mt线程打印机");
         mt.start();
         System.out.println("mt线程的优先级为："+mt.getPriority());
         mt.setPriority(Thread.MIN_PRIORITY);

@@ -1,6 +1,6 @@
 package com.imooc.basic.thread;
 
-public class RunnableTest implements java.lang.Runnable {
+public class RunnableTest implements Runnable {
     public void run() {
         System.out.println(Thread.currentThread().getName()+"线程正在运行");
     }
